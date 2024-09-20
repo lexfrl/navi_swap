@@ -90,8 +90,8 @@ dependencies = [
 
 [env.mainnet]
 chain-id = "35834a8a"
-original-published-id = "0x423df0fbf73ee8f482f4561a0e87ada87c2126d35aa219ecf520480041f3d7dc"
-latest-published-id = "0x423df0fbf73ee8f482f4561a0e87ada87c2126d35aa219ecf520480041f3d7dc"
+original-published-id = "0x57d82eb99d14b690d20fb8cb8fa6857730385256afa0c6e47a082408c0a8a100"
+latest-published-id = "0x57d82eb99d14b690d20fb8cb8fa6857730385256afa0c6e47a082408c0a8a100"
 published-version = "1"
 
 [[move.package]]
