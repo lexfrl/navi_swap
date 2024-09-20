@@ -18,6 +18,7 @@ module navi_swap::flash_swap_module {
     entry public fun do_swap<CoinTypeA, CoinTypeB>(
         amount: u64,
         a2b: bool,
+        amount_in: bool,
         pool_asset_id_a: u8, 
         pool_asset_id_b: u8,
         pool_a: &mut Pool<CoinTypeA>,
@@ -35,7 +36,7 @@ module navi_swap::flash_swap_module {
             config,
             pool,
             a2b,
-            true,
+            amount_in,
             amount,
             sqrt_price_limit,
             clock
