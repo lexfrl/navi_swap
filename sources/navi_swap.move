@@ -1,11 +1,9 @@
 module navi_swap::flash_swap_module {
     use cetus_clmm::pool::{Pool as AMMPool};
     use cetus_clmm::pool;
-    use cetus_clmm::pool::FlashSwapReceipt;
     use cetus_clmm::config::GlobalConfig;
     use sui::clock::Clock;
     use sui::balance;
-    use sui::balance::Balance;
     use lending_core::pool::Pool;
     use lending_core::storage::{Storage};
     use oracle::oracle::{PriceOracle};

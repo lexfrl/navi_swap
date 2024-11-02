@@ -1,1 +1,1 @@
-[Deployment on the SUI mainnet](https://suiscan.xyz/mainnet/object/0xf5e4d0c1ac4ee9bae03dc5c98560a8954fe720508326be77ca4de4c9a2d8d7a9/contracts)
+[Deployment on the SUI mainnet](https://suiscan.xyz/mainnet/object/0x44c01cd7216a99ad4d40580a4221d0bad8066d17ce7a859506a40f69e7a7fea5/contracts)
