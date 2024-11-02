@@ -1,1 +1,21 @@
-[Deployment on the SUI mainnet](https://suiscan.xyz/mainnet/object/0x44c01cd7216a99ad4d40580a4221d0bad8066d17ce7a859506a40f69e7a7fea5/contracts)
+I'm pleased to share the product of my experiments with the Sui Network made last week. The dApp allows a user of Navi Protocol to manage her dept (and eventually, collateral) positions without repay (combines repay/borrow in the same transaction). For me it was a good exercise to dive into the core Move concepts and also allowed me to explore integrations with the most popular DeFI protocols on Sui, as well as wrapping everything up into the complete dApp.
+
+# Rationale
+
+As a DeFi user, I often encounter situations where I want to switch (or exchange) assets that I'm borrowing or using as collateral in a lending protocol such as [Navi](https://app.naviprotocol.io/borrow). For example, if I want to switch a loan from USDT to USDC, I first need to repay the USDT debt before I can borrow USDC. However, sometimes I don't have enough USDT on hand to cover the debt first, leaving me stuck.
+
+# Solution
+
+The solution is to leverage [flash_swap](https://cetus-1.gitbook.io/cetus-developer-docs/developer/via-contract/features-available/swap-and-preswap), which splits the swap process into two steps: `flash_swap` and `repay_flash_swap`. In the `flash_swap` operation, you initiate a swap from asset A to asset B, with the promise to return the equivalent of asset B in the `repay_flash_swap` step. This allows you to obtain asset A to repay the debt, and then borrow asset B to complete the repayment of the flash swap.
+
+# Next Steps
+
+The next logical step is to implement the same mechanism for the collateral side. There are also several additional ideas to explore for rebalancing portfolios and optimizing asset management.
+
+I'm considering to write a post to describe my overall experience of interacting with Sui (which is quite positive!) next week!
+
+[Demo video](https://www.youtube.com/watch?v=1CLQv-YQ8q4)
+
+Live on https://navi-cetus-swap.vercel.app (mainnet)
+
+Appreciate your feedback (I'm testing with my own funds on the mainnet, but consider it's an alfa software)!
