@@ -41,11 +41,10 @@ module navi_swap::flash_swap_module {
             sqrt_price_limit,
             clock
         );
-        // let (in_amount, out_amount) = (pool::swap_pay_amount(&flash_receipt), balance::value(&receive_b));
         if (a2b) {
             let b_value = receive_b.value();
             let new_b = repay(clock, oracle, storage, pool_b, pool_asset_id_b, receive_b.into_coin(ctx), b_value, incentive, ctx);
-            let new_borrow = borrow(clock, oracle, storage, pool_a, pool_asset_id_a, amount, incentive, ctx);
+            let new_borrow = borrow(clock, oracle, storage, pool_a, pool_asset_id_a, pool::swap_pay_amount(&flash_receipt), incentive, ctx);
             new_b.destroy_zero();
             receive_a.destroy_zero();
             let (pay_coin_a, pay_coin_b) = (new_borrow, balance::zero());
@@ -59,7 +58,7 @@ module navi_swap::flash_swap_module {
         } else {
             let a_value = receive_a.value();
             let new_a = repay(clock, oracle, storage, pool_a, pool_asset_id_a, receive_a.into_coin(ctx), a_value, incentive, ctx);
-            let new_borrow = borrow(clock, oracle, storage, pool_b, pool_asset_id_b, amount, incentive, ctx);
+            let new_borrow = borrow(clock, oracle, storage, pool_b, pool_asset_id_b, pool::swap_pay_amount(&flash_receipt), incentive, ctx);
             new_a.destroy_zero();
             receive_b.destroy_zero();
             let (pay_coin_a, pay_coin_b) = (balance::zero(), new_borrow);
