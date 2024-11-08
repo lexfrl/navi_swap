@@ -1,5 +1,3 @@
-I'm pleased to share the product of my experiments with the Sui Network made last week. The dApp allows a user of Navi Protocol to manage her dept (and eventually, collateral) positions without repay (combines repay/borrow in the same transaction). For me it was a good exercise to dive into the core Move concepts and also allowed me to explore integrations with the most popular DeFI protocols on Sui, as well as wrapping everything up into the complete dApp.
-
 # Rationale
 
 As a DeFi user, I often encounter situations where I want to switch (or exchange) assets that I'm borrowing or using as collateral in a lending protocol such as [Navi](https://app.naviprotocol.io/borrow). For example, if I want to switch a loan from USDT to USDC, I first need to repay the USDT debt before I can borrow USDC. However, sometimes I don't have enough USDT on hand to cover the debt first, leaving me stuck.
